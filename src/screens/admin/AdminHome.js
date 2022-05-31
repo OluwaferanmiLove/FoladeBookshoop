@@ -49,7 +49,7 @@ function AdminHome ({navigation}) {
       <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
         <View style={styles.header}>
           <View style={styles.userInfoContainer}>
-            <Text style={styles.name}>Oluwaferanmi</Text>
+            <Text style={styles.name}>{state.user.firstName} {state.user.lastName}</Text>
             <Text style={styles.description}>{state.user.role}</Text>
           </View>
           <TouchableOpacity onPress={handleLogOut}>
@@ -84,12 +84,13 @@ function AdminHome ({navigation}) {
             iconName={'person-outline'}
             value={'Admin'}
           />
-          {/* <ActionCards
-            color={generateColor()}
+          <ActionCards
             marginTop={hp(25)}
+            onPress={() => navigation.navigate('PaymentHistory')}
+            iconName={'cash-outline'}
             title={'Payments'}
             value={40}
-          /> */}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
