@@ -89,7 +89,7 @@ function AdminHome ({navigation}) {
             onPress={() => navigation.navigate('PaymentHistory')}
             iconName={'cash-outline'}
             title={'Payments'}
-            value={40}
+            value={'History'}
           />
         </View>
       </ScrollView>

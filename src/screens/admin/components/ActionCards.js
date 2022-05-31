@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     color: colors.primary
   },
   value: {
-    fontSize: wp(38),
+    fontSize: wp(37),
     fontWeight: '700',
     color: colors.primaryLighter
   },

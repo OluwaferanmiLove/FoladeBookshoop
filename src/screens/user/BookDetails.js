@@ -151,6 +151,15 @@ const styles = StyleSheet.create({
     marginTop: hp(10),
     marginBottom: hp(25),
   },
+  loading: {
+    flex: 1,
+    position: 'absolute',
+    height: hp(812),
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#00000090',
+  }
 })
 
 export default BookDetails;
