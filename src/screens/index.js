@@ -6,6 +6,7 @@ import Login from "./auth/Login"
 import OnBoarding from "./auth/Onboarding"
 import SignUp from "./auth/SignUp"
 import Profile from "./profile/Profile"
+import About from "./user/About"
 import BookDetails from "./user/BookDetails"
 import Home from "./user/Home"
 
@@ -15,6 +16,7 @@ export {
    PaymentHistory,
    Home,
    Profile,
+   About,
    OnBoarding,
    Login,
    SignUp,

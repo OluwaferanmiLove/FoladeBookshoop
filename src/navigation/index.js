@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import AdminNav from './AdminNav';
 import { createStackNavigator } from '@react-navigation/stack';
-import { BookDetails, Login, OnBoarding, PaymentHistory, Profile, Questions, SignUp } from '../screens';
+import { About, BookDetails, Login, OnBoarding, PaymentHistory, Profile, Questions, SignUp } from '../screens';
 import { AppContext } from '../context/AppContext';
 import { colors } from '../constants/colors';
 import UserNav from './UserNav';
@@ -28,6 +28,7 @@ export default function FoladeBookShop() {
               <MainStack.Screen component={OnBoarding} name={'OnBoarding'} />
               <MainStack.Screen component={Login} name={'Login'} />
               <MainStack.Screen component={SignUp} name={'SignUp'} />
+              <MainStack.Screen component={About} name={'About'} />
             </>
           ) : (
             <>
@@ -41,6 +42,7 @@ export default function FoladeBookShop() {
                 <MainStack.Screen component={AdminList} name={'AdminList'} />
                 <MainStack.Screen component={PaymentHistory} name={'PaymentHistory'} />
                 <MainStack.Screen component={BookDetails} name={'BookDetails'} />
+                <MainStack.Screen component={About} name={'About'} />
             </>
           )}
       </MainStack.Navigator>

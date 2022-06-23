@@ -25,15 +25,15 @@ function OnBoarding({navigation}) {
     // <SafeAreaView style={styles.main}>
     <View style={styles.main} source={require('../../assets/bg.png')}>
         <StatusBar barStyle={'dark-content'} translucent backgroundColor={'#ffffff00'} />
-        <View style={{ marginTop: hp(150), alignItems: 'center', justifyContent: 'center'}}>
+        <View style={{ marginTop: hp(120), alignItems: 'center', justifyContent: 'center'}}>
           <Image
             // source={require('../../assets/logo.png')}
             source={require('../../assets/onBoardImage.png')}
             style={{width: wp(300), height: hp(260), resizeMode: 'contain'}}/>
         </View>
         <View style={{ marginTop: hp(80), alignItems: 'center', justifyContent: 'center', marginHorizontal: wp(25)}}>
-          <Text style={styles.title}>Folade Bookshop</Text>
-          <Text style={styles.title}>Buy your books online</Text>
+          <Text style={styles.title}>Jasper Books</Text>
+          <Text style={styles.title}>Nigeria Limited</Text>
         </View>
         <View style={styles.button}>
           <Button
@@ -47,6 +47,14 @@ function OnBoarding({navigation}) {
               <Text
                 style={{color: colors.primary, fontSize: wp(16)}}>
                   Don't have an account yet? Sign up now
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{marginTop: hp(35)}}>
+            <TouchableOpacity onPress={() => navigation.navigate('About')}>
+              <Text
+                style={{color: '#888', fontWeight: 'bold', fontSize: wp(18)}}>
+                  Read About The Developer
               </Text>
             </TouchableOpacity>
           </View>

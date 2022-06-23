@@ -33,19 +33,19 @@ function Home({ navigation }) {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const data = [];
       querySnapshot.forEach((doc) => {
-          data.push(doc.data());
+        data.push(doc.data());
       });
       setData(data);
     },
-    (error) => {
-      console.log(error.message);
-    });
-    
+      (error) => {
+        console.log(error.message);
+      });
+
     return () => unsubscribe();
   }, []);
 
   const navigateToBook = (detail) => {
-    navigation.navigate('BookDetails', {detail: detail})
+    navigation.navigate('BookDetails', { detail: detail })
   }
 
   return (
@@ -54,9 +54,14 @@ function Home({ navigation }) {
       <View style={styles.header}>
         <View style={styles.userInfoContainer}>
           <Text style={styles.name}>Hi, {state.user.firstName} 👋 </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('About')}>
+            <View style={[styles.iconContainer]}>
+              <Ionicons name={'information-circle-outline'} size={wp(25)} color={colors.primary} />
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
-      <View style={{marginTop: hp(10)}}>
+      <View style={{ marginTop: hp(10) }}>
         <Input
           placeholder={'Search'}
           iconName={'search'}
@@ -64,13 +69,13 @@ function Home({ navigation }) {
           iconColor={colors.primary}
         />
       </View>
-      <ScrollView style={{marginHorizontal: -wp(20)}}>
-        <View  style={styles.content}>
+      <ScrollView style={{ marginHorizontal: -wp(20) }}>
+        <View style={styles.content}>
           {data.map((item, index) => (
             <BookCard
               key={item.title}
               title={item.title}
-              image={{uri: item.image}}
+              image={{ uri: item.image }}
               price={item.price}
               onPress={() => navigateToBook(item)}
             />
@@ -94,7 +99,10 @@ const styles = StyleSheet.create({
   },
   userInfoContainer: {
     flex: 1,
-    marginLeft: wp(10)
+    marginLeft: wp(10),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   name: {
     fontSize: wp(30),
@@ -110,10 +118,10 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: wp(35),
-    height: wp(35),
-    borderRadius: 7,
-    backgroundColor: colors.secondaryLighter + '30',
+    width: wp(40),
+    height: wp(40),
+    borderRadius: 12,
+    backgroundColor: colors.primary + '15',
   },
   infoContainer: {
     alignItems: 'center',
